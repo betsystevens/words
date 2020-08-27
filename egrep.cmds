@@ -1,0 +1,12 @@
+# match 4 letter words from commonWords.txt
+$ egrep '^[A-Z]{4}\s' commonWords.txt > fourLetterCommon.txt
+
+# commonWords.txt has a lot of acronyms in it
+# Remove the ones without vowels with this.
+$ egrep '[AEIOUY]\s' fourLetterCommon.txt > noAcronyms.txt 
+
+# match 4 letter words from allWords.txt
+$ egrep '^[a-z]{4}$' allWords.txt > fourLetterWords.txt
+
+# look at word counts for the files
+$ for i in *.txt; do wc ${i}; done;
